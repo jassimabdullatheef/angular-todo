@@ -1,0 +1,86 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica,sans-serif; }
+
+button {
+  font-size: 14px;
+  padding: 10px 30px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #ccc; }
+  button img {
+    width: 20px; }
+  button:hover {
+    box-shadow: 0px 2px 5px 0px #999; }
+
+.container {
+  width: 100%;
+  float: left;
+  display: block; }
+  .container .header {
+    height: 40px;
+    padding: 20px;
+    width: calc(100% - 40px); }
+  .container .sidebar {
+    width: 400px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: #F5F5F5; }
+    .container .sidebar .header h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: normal;
+      color: #318FC0; }
+    .container .sidebar .todoList {
+      background-color: #ffffff;
+      width: 100%;
+      float: left;
+      box-shadow: 0px 1px 1px 0px #ccc; }
+      .container .sidebar .todoList ul {
+        margin: 0;
+        padding: 0; }
+        .container .sidebar .todoList ul li {
+          width: 90%;
+          padding: 20px 5%;
+          border-bottom: 1px solid #e5e5e5;
+          transition: all 0.2s ease; }
+          .container .sidebar .todoList ul li:last-child {
+            border-bottom: none; }
+          .container .sidebar .todoList ul li:hover {
+            box-shadow: 0px 2px 3px 1px #cccccc; }
+    .container .sidebar .footer {
+      width: 90%;
+      padding: 20px 5%;
+      background-color: #DBDBDB;
+      position: absolute;
+      bottom: 0px;
+      text-align: center; }
+  .container .content {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 400px;
+    right: 0px; }
+    .container .content .header {
+      background-color: #DBDBDB;
+      text-align: right; }
+    .container .content .todoData {
+      width: calc(100% - 40px);
+      float: left;
+      padding: 20px; }
+      .container .content .todoData .todoTitle, .container .content .todoData .todoContent {
+        width: 100%;
+        padding: 10px 0px;
+        border: none; }
+        .container .content .todoData .todoTitle:active, .container .content .todoData .todoTitle:focus, .container .content .todoData .todoContent:active, .container .content .todoData .todoContent:focus {
+          outline: none; }
+      .container .content .todoData .todoTitle {
+        font-size: 32px;
+        font-weight: lighter;
+        border-bottom: dashed 1px #ccc; }
+      .container .content .todoData .todoContent {
+        font-size: 16px; }

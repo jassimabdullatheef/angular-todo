@@ -1,0 +1,109 @@
+body{
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica,sans-serif;
+}
+button{
+  font-size: 14px;
+  padding: 10px 30px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  img{
+    width: 20px;
+  }
+  &:hover{
+    box-shadow: 0px 2px 5px 0px #999;
+  }
+}
+.container{
+  width: 100%;
+  float: left;
+  display: block;
+  .header {
+    height: 40px;
+    padding: 20px;
+    width: calc(100% - 40px);
+  }
+  .sidebar{
+    width: 400px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: #F5F5F5;
+    .header{
+      h1{
+        margin: 0;
+        font-size: 32px;
+        font-weight: normal;
+        color: #318FC0;
+
+      }
+    }
+    .todoList{
+      background-color: #ffffff;
+      width: 100%;
+      float: left;
+      box-shadow: 0px 1px 1px 0px #ccc;
+      ul{
+        margin: 0;
+        padding: 0;
+        li{
+          width: 90%;
+          padding: 20px 5%;
+          border-bottom: 1px solid #e5e5e5;
+          transition: all 0.2s ease;
+          &:last-child{
+            border-bottom: none;
+          }
+          &:hover{
+            box-shadow: 0px 2px 3px 1px #cccccc;
+          }
+        }
+      }
+    }
+    .footer{
+      width: 90%;
+      padding: 20px 5%;
+      background-color: #DBDBDB;
+      position: absolute;
+      bottom: 0px;
+      text-align: center;
+
+    }
+  }
+  .content{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 400px;
+    right: 0px;
+    .header{
+      background-color: #DBDBDB;
+      text-align: right;
+    }
+    .todoData{
+      width: calc(100% - 40px);
+      float: left;
+      padding: 20px;
+      .todoTitle,.todoContent{
+        width: 100%;
+        padding: 10px 0px;
+        border: none;
+        &:active,&:focus{
+          outline: none;
+        }
+      }
+      .todoTitle{
+        font-size: 32px;
+        font-weight: lighter;
+        border-bottom: dashed 1px #ccc;
+      }
+      .todoContent{
+        font-size: 16px;
+      }
+    }
+  }
+}

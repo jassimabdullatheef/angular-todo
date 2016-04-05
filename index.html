@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo Application</title>
+  <script src="script/angular.js"></script>
+  <script src="script/script.js"></script>
+  <link rel="stylesheet" href="style/sass/style.css">
+</head>
+<body ng-app="todoApp">
+  <div class="container" ng-controller="todoController">
+    <div class="sidebar">
+      <div class="header">
+        <h1>Todo App</h1>
+      </div>
+      <div class="todoList">
+
+        <ul >
+          <li ng-repeat="todo in todos | filter:{checked : todoHide}" ng-click="viewTodo(todo.id)">
+            <input type="checkbox" id="{{todo.id}}" ng-model="todo.checked">
+            <label for="{{todo.id}}" > {{todo.title}}</label>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="footer">
+
+        <button>
+          <input type="checkbox" ng-model="todoHide" id="todoHide">
+          <label for="todoHide"><img src="asset/view-button.svg" alt="View Button"> Hide Completed</label>
+        </button>
+
+      </div>
+    </div>
+    <div class="content">
+      <div class="header">
+        <button><img src="asset/trash-button.svg" alt="Trash Button"></button>
+        <button ng-click="addNewTodo()"><img src="asset/add-button.svg" alt="Add Button"></button>
+      </div>
+      <div class="todoData">
+        <input type="text" class="todoTitle" placeholder="Type your Todo Item Here" ng-model="todos[selectedTodo].title">
+        <textarea name="todoContent" id="" cols="30" rows="10" class="todoContent" placeholder="Describe your Todo Here" ng-model="todos[selectedTodo].content"></textarea>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
