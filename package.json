@@ -13,5 +13,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jassim",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jassimabdullatheef/angular-todo.git"
+  },
+  "keywords": [
+    "todo",
+    "angular"
+  ],
+  "bugs": {
+    "url": "https://github.com/jassimabdullatheef/angular-todo/issues"
+  },
+  "homepage": "https://github.com/jassimabdullatheef/angular-todo#readme"
 }

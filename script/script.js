@@ -31,4 +31,9 @@ app.controller('todoController',['$scope',function($scope){
     });
     $scope.selectedTodo = newId;
   }
+
+  $scope.hideCompleted = function(){
+    $scope.hideFilter = ($scope.todoHide === true)?"false":"";
+    
+  }
 }]);
