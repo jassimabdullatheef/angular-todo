@@ -27,7 +27,7 @@ app.controller('todoController',['$scope',function($scope){
 
   // To add new todo item
   $scope.addNewTodo = function(){
-    var newId = $scope.todos[$scope.todos.length -1].id + 1;
+    var newId = ($scope.todos.length != 0)? ($scope.todos[$scope.todos.length -1].id + 1) : 0;
     $scope.todos.push({
       id: newId,
       title : "",
@@ -35,7 +35,7 @@ app.controller('todoController',['$scope',function($scope){
       checked: false
     });
     $scope.selectedTodo = newId;
-    document.getElementById('todoTitle').focus();
+    // document.getElementById('todoTitle').focus();
   }
 
 
@@ -46,7 +46,16 @@ app.controller('todoController',['$scope',function($scope){
 
   // Todo delete function
   $scope.deleteTodo = function(){
-    $scope.todos.splice($scope.selectedTodo, 1);
+
+
+    for (var i = 0; i < $scope.todos.length; i++) {
+      if($scope.todos[i].id==$scope.selectedTodo){
+        index = i;
+        break;
+      }
+    }
+
+    $scope.todos.splice(index, 1);
 
   }
 

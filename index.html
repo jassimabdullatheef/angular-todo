@@ -39,7 +39,7 @@
         <button ng-click="addNewTodo()"><img src="asset/add-button.svg" alt="Add Button"></button>
       </div>
       <div class="todoData" ng-repeat="todo in todos | filter:{id: selectedTodo}">
-        <input type="text" id="todoTitle" class="todoTitle" placeholder="Type your Todo Item Here" ng-model="todo.title">
+        <input autofocus type="text" id="todoTitle" class="todoTitle" placeholder="Type your Todo Item Here" ng-model="todo.title">
         <textarea name="todoContent" id="" cols="30" rows="10" class="todoContent" placeholder="Describe your Todo Here" ng-model="todo.content"></textarea>
       </div>
     </div>
