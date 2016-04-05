@@ -1,6 +1,8 @@
 var app = angular.module('todoApp',[]);
 
 app.controller('todoController',['$scope',function($scope){
+
+  // Sample todo data
   $scope.todos = [
     {
       id: 0,
@@ -16,13 +18,16 @@ app.controller('todoController',['$scope',function($scope){
     }
   ];
   $scope.selectedTodo = 0;
-  $scope.count = 0;
+
   $scope.viewTodo = function(id){
     $scope.selectedTodo = id;
-    // console.log('List item with id ' + id + ' has been clicked');
+    // console.log('List item with id ' + $scope.selectedTodo + ' has been clicked');
+    // console.log($scope.todos);
   };
+
+  // To add new todo item
   $scope.addNewTodo = function(){
-    var newId = $scope.todos.length;
+    var newId = $scope.todos[$scope.todos.length -1].id + 1;
     $scope.todos.push({
       id: newId,
       title : "",
@@ -30,10 +35,19 @@ app.controller('todoController',['$scope',function($scope){
       checked: false
     });
     $scope.selectedTodo = newId;
+    document.getElementById('todoTitle').focus();
   }
 
+
+  // For changing the string the filter the todo items
   $scope.hideCompleted = function(){
     $scope.hideFilter = ($scope.todoHide === true)?"false":"";
-    
   }
+
+  // Todo delete function
+  $scope.deleteTodo = function(){
+    $scope.todos.splice($scope.selectedTodo, 1);
+
+  }
+
 }]);

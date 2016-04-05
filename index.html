@@ -35,12 +35,12 @@
     </div>
     <div class="content">
       <div class="header">
-        <button><img src="asset/trash-button.svg" alt="Trash Button"></button>
+        <button ng-click="deleteTodo()"><img src="asset/trash-button.svg" alt="Trash Button"></button>
         <button ng-click="addNewTodo()"><img src="asset/add-button.svg" alt="Add Button"></button>
       </div>
-      <div class="todoData">
-        <input type="text" class="todoTitle" placeholder="Type your Todo Item Here" ng-model="todos[selectedTodo].title">
-        <textarea name="todoContent" id="" cols="30" rows="10" class="todoContent" placeholder="Describe your Todo Here" ng-model="todos[selectedTodo].content"></textarea>
+      <div class="todoData" ng-repeat="todo in todos | filter:{id: selectedTodo}">
+        <input type="text" id="todoTitle" class="todoTitle" placeholder="Type your Todo Item Here" ng-model="todo.title">
+        <textarea name="todoContent" id="" cols="30" rows="10" class="todoContent" placeholder="Describe your Todo Here" ng-model="todo.content"></textarea>
       </div>
     </div>
   </div>
